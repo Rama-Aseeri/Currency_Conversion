@@ -1,0 +1,59 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card" style="background-color:rgb(205, 178, 222);">
+
+                <div class="card-body">
+                
+                    <h3 class="text-center mt-3"><span class="badge" style="background-color: rgb(140, 58, 199);">برنامج تحويل العملة</span></h3>
+                    <div class="row">
+                        <div class="col">
+                            <label class="form-label">من</label>
+                            <select class="form-select" [(ngModel)]="fromConvert">
+                                <option value="{{item.Currency_code}}" *ngFor="let item of currancy"> 
+                                    {{item.country_name}}
+                                </option>
+                            </select> 
+                        </div>
+
+                        <div class="col">
+                            <label class="form-label">إلى</label>
+                            <select class="form-select" [(ngModel)]="toConvert">
+                                <option value="{{item.Currency_code}}" *ngFor="let item of currancy"> 
+                                    {{item.country_name}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="row mt-3">
+                        <div class="col">
+                            <label class="form-label">ادخل المبلغ</label>
+                            <input type="text" class="form-control" [(ngModel)]="amount"> 
+                        </div>
+                    </div>
+
+  
+
+                    <div class="row mt-3 d-flex justify-content-center">
+                        <div class="col-auto">
+                            <button class="btn btn-primary" (click)="get_currency()">تحويل</button>
+                        </div>
+                    </div>
+
+
+                    <div class="row mt-3">
+                        <div class="col">
+                            <h4 class="alert alert-info">{{result}}</h4>
+                        </div>
+                    </div>
+
+                </div>
+        
+            </div>
+        </div>
+    </div>
+</div>
